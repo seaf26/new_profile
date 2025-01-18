@@ -59,13 +59,13 @@ export const products = [
     slug: "cslf",
     content: (
       <div>
-        <p>
+   <p>
           Key Features:
           <br />
-          Eight pages tailored to highlight the law firm's offerings. Fully
+          Eight pages tailored to highlight the law firm&apos;s offerings. Fully
           responsive design for optimal viewing on any device. Smooth animations
-          integrated using AOS (Animate On Scroll).{" "}
-        </p>
+          integrated using AOS Animate On Scroll.{" "}
+        </p>     
         <p>
           My Role:
           <br />I developed the entire project from scratch, handling the
@@ -74,16 +74,16 @@ export const products = [
         <p>
           Target Audience:
           <br />
-          Clients seeking legal services and information about the law firm's
+          Clients seeking legal services and information about the law firm&apos;
           expertise.
         </p>{" "}
         <p>
           Target Audience:
           <br />
-          Clients seeking legal services and information about the law firm's
+          Clients seeking legal services and information about the law firm&apos;
           expertise.Challenges and Solutions: During development, I encountered
           browser compatibility issues and challenges with CSS not rendering
-          properly on the client’s phone. Using my experience, I resolved these
+          properly on the client&apos;s phone. Using my experience, I resolved these
           issues to ensure a flawless user experience.
         </p>{" "}
       </div>
@@ -135,7 +135,7 @@ export const products = [
         </p>
         <p>
           My Role: <br />I built this project from scratch, handling everything
-          from API integration to the website's design and development.
+          from API integration to the website&apos;s design and development.
         </p>{" "}
         <p>
           Target Audience:

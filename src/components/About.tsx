@@ -74,7 +74,7 @@ export default function About() {
           Hey there, I&apos;m Seaf Gamel -  Seaf Gamel is a Full-Stack
           Developer, Coach and Instructor. He is a passionate tech enthusiast
           who builds and develops websites while exploring new places and
-          embracing the freedom of working remotely.",
+          embracing the freedom of working remotely.&quot;
         </Paragraph>
         <Paragraph className=" mt-4">
           Since the early days of my journey, I&apos;ve been captivated by the
