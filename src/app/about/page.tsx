@@ -10,9 +10,9 @@ import { motion } from "framer-motion";
 import About from "@/components/About";
 
 export const metadata: Metadata = {
-  title: "About | John Doe",
+  title: "About | Seaf Gamel",
   description:
-    "John Doe is a developer, writer and speaker. He is a digital nomad and travels around the world while working remotely.",
+  " Seaf Gamel is a Full-Stack Developer, Coach and Instructor. He is a passionate tech enthusiast who builds and develops websites while exploring new places and embracing the freedom of working remotely.",
 };
 
 export default function AboutPage() {

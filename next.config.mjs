@@ -2,6 +2,11 @@
 import nextMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
 import rehypePrism from "@mapbox/rehype-prism";
+import createNextIntlPlugin from 'next-intl/plugin';
+
+
+const withNextIntl = createNextIntlPlugin();
+
 
 const nextConfig = {
   images: {
@@ -19,5 +24,7 @@ const withMDX = nextMDX({
     rehypePlugins: [rehypePrism],
   },
 });
+const combinedConfig = withNextIntl(withMDX(nextConfig));
 
-export default withMDX(nextConfig);
+
+export default combinedConfig;

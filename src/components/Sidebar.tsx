@@ -4,7 +4,7 @@ import { Navlink } from "@/types/navlink";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Heading } from "./Heading";
 import { socials } from "@/constants/socials";
@@ -12,9 +12,33 @@ import { Badge } from "./Badge";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconLayoutSidebarRightCollapse } from "@tabler/icons-react";
 import { isMobile } from "@/lib/utils";
+import Seaf from "../../public/images/seaf1.jpg";
 
 export const Sidebar = () => {
   const [open, setOpen] = useState(isMobile() ? false : true);
+  const [locale, setLocale] = useState<string>("");
+  const router = useRouter();
+
+  useEffect(() => {
+    const cookieLocale = document.cookie
+      .split(";")
+      .find((row) => row.trim().startsWith("MYNEXTAPP_LOCALE="))
+      ?.split("=")[1];
+    if (cookieLocale) {
+      setLocale(cookieLocale);
+    } else {
+      const browserLocale = navigator.language.slice(0, 2);
+      setLocale(browserLocale);
+      document.cookie = `MYNEXTAPP_LOCALE=${browserLocale}`;
+      router.refresh();
+    }
+  }, [router]);
+
+  const handleLocale = (newLocale: string) => {
+    setLocale(newLocale);
+    document.cookie = `MYNEXTAPP_LOCALE=${newLocale}`;
+    router.refresh();
+  };
 
   return (
     <>
@@ -29,8 +53,28 @@ export const Sidebar = () => {
           >
             <div className="flex-1 overflow-auto">
               <SidebarHeader />
+
               <Navigation setOpen={setOpen} />
             </div>
+            <div className="flex space-x-2 items-center justify-center mb-4">
+              <button
+                onClick={() => handleLocale("en")}
+                className={`border w-12 p-2 font-bold rounded-md text-sm ${
+                  locale === "en" && "bg-white text-black"
+                }`}
+              >
+                En
+              </button>
+              <button
+                onClick={() => handleLocale("ar")}
+                className={`border w-12 p-2 font-bold rounded-md text-sm ${
+                  locale === "Ar" && "bg-white text-black"
+                }`}
+              >
+                Ar
+              </button>
+            </div>
+
             <div onClick={() => isMobile() && setOpen(false)}>
               <Badge href="/resume" text="Read Resume" />
             </div>
@@ -85,6 +129,7 @@ export const Navigation = ({
         <Link
           key={link.href}
           href={link.href}
+          target="_blank"
           className={twMerge(
             "text-secondary hover:text-primary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm"
           )}
@@ -106,14 +151,14 @@ const SidebarHeader = () => {
   return (
     <div className="flex space-x-2">
       <Image
-        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80"
+      src={Seaf}
         alt="Avatar"
         height="40"
         width="40"
         className="object-cover object-top rounded-full flex-shrink-0"
       />
       <div className="flex text-sm flex-col">
-        <p className="font-bold text-primary">John Doe</p>
+        <p className="font-bold text-primary">Seaf Gamel</p>
         <p className="font-light text-secondary">Developer</p>
       </div>
     </div>

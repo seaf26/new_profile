@@ -1,23 +1,23 @@
 import {
   IconBrandLinkedin,
-  IconBrandTwitter,
-  IconBrandYoutube,
+  IconBrandGithub,
+  IconBrandWhatsapp,
 } from "@tabler/icons-react";
 
 export const socials = [
   {
-    href: "https://twitter.com/mannupaaji",
-    label: "Twitter",
-    icon: IconBrandTwitter,
+    href: "https://wa.me/+201156683335",
+    label: "WhatsApp",
+    icon: IconBrandWhatsapp,
   },
   {
-    href: "https://linkedin.com/in/manuarora28",
+    href: "https://github.com/seaf26",
+    label: "Github",
+    icon: IconBrandGithub,
+  },
+  {
+    href: "https://www.linkedin.com/in/seaf-gamel-31303626b",
     label: "LinkedIn",
     icon: IconBrandLinkedin,
-  },
-  {
-    href: "https://youtube.com/maninthere",
-    label: "YouTube",
-    icon: IconBrandYoutube,
   },
 ];
